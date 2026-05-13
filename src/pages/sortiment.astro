@@ -6,9 +6,21 @@ const wa = 'https://wa.me/4915566111551?text=Hallo%2C%20ich%20suche%20folgendes%
 const kategorien = [
   {
     icon: '🛞',
-    title: 'Verschleißteile',
-    image: 'https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=900',
-    items: ['Bremsen (Scheiben, Beläge, Sättel)', 'Filter (Öl, Luft, Innenraum, Kraftstoff)', 'Ölwechsel-Sets', 'Zündkerzen', 'Riemen (Keil, Zahn)', 'Stoßdämpfer', 'Achs-Teile'],
+    title: 'Filter & Verschleißteile',
+    image: '/images/filter-regal.jpg',
+    items: ['Filter (Öl, Luft, Innenraum, Kraftstoff) - alle Marken', 'Bremsen (Scheiben, Beläge, Sättel)', 'Zündkerzen', 'Riemen (Keil, Zahn)', 'Stoßdämpfer', 'Achs-Teile'],
+  },
+  {
+    icon: '🛢️',
+    title: 'Öle & Schmierstoffe',
+    image: '/images/oel-regal.jpg',
+    items: ['Liqui Moly (5W-30, 5W-40, 0W-20)', 'Castrol Magnatec & Edge', 'Mannol Extreme & Elite', 'BP Premium', 'Spezial-Öle für Sport- und Oldtimer', 'Ölwechsel-Sets komplett'],
+  },
+  {
+    icon: '🧪',
+    title: 'Bremsenreiniger & Pflege',
+    image: '/images/bremsenreiniger.jpg',
+    items: ['Bremsenreiniger palettenweise', 'Motorreiniger', 'Kontaktspray', 'Rostlöser', 'Werkstatt-Verbrauchsmaterial'],
   },
   {
     icon: '⚡',
@@ -17,28 +29,16 @@ const kategorien = [
     items: ['Batterien', 'Lichtmaschinen', 'Anlasser', 'Glühkerzen', 'Sensoren (alle Arten)', 'Kabelbäume', 'Zündspulen'],
   },
   {
-    icon: '🚪',
-    title: 'Karosserie',
-    image: 'https://images.pexels.com/photos/3807329/pexels-photo-3807329.jpeg?auto=compress&cs=tinysrgb&w=900',
-    items: ['Stoßfänger', 'Spiegel (manuell + elektrisch)', 'Lampen (LED, Halogen, Xenon)', 'Scheiben', 'Türgriffe', 'Kotflügel'],
-  },
-  {
     icon: '🔥',
-    title: 'Motor',
-    image: 'https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=900',
-    items: ['Motorteile aller Art', 'Kupplungen', 'Wasserpumpen', 'Thermostate', 'Auspuff-Anlagen', 'Turbolader', 'Einspritzdüsen'],
-  },
-  {
-    icon: '🔧',
-    title: 'Zubehör',
-    image: 'https://images.pexels.com/photos/5835359/pexels-photo-5835359.jpeg?auto=compress&cs=tinysrgb&w=900',
-    items: ['Werkzeuge (Hobby + Profi)', 'Pflegemittel', 'Lacke + Lack-Korrektur', 'Tuning-Teile', 'Innenraum-Zubehör'],
+    title: 'Motor & Karosserie',
+    image: 'https://images.pexels.com/photos/3807329/pexels-photo-3807329.jpeg?auto=compress&cs=tinysrgb&w=900',
+    items: ['Motorteile aller Art', 'Kupplungen, Wasserpumpen, Thermostate', 'Stoßfänger, Spiegel, Türgriffe', 'Lampen (LED, Halogen, Xenon)', 'Auspuff-Anlagen, Turbolader'],
   },
   {
     icon: '📦',
     title: 'Spezial-Bestellung',
     image: 'https://images.pexels.com/photos/4489734/pexels-photo-4489734.jpeg?auto=compress&cs=tinysrgb&w=900',
-    items: ['Premium-Marken', 'Original-Teile (OEM)', 'Oldtimer-Teile', 'Importteile', 'Schnelle Beschaffung'],
+    items: ['Premium-Marken (Bosch, Mahle, MANN, Meyle)', 'Original-Teile (OEM)', 'Oldtimer-Teile', 'Importteile', 'Schnelle Beschaffung'],
   },
 ];
 ---
@@ -50,7 +50,7 @@ const kategorien = [
 
   <section class="bg-black text-white relative overflow-hidden">
     <div class="absolute inset-0 opacity-25">
-      <img src="https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      <img src="/images/filter-regal.jpg"
            alt="" class="w-full h-full object-cover"/>
     </div>
     <div class="container-x relative py-16 md:py-24">
