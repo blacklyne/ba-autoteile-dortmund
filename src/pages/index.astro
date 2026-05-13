@@ -1,17 +1,303 @@
 ---
+import Layout from '../layouts/Layout.astro';
 
+const wa = 'https://wa.me/4915566111551?text=Hallo%2C%20ich%20suche%20folgendes%20Teil%3A%20';
+
+const kategorien = [
+  { icon: '🛒', title: 'Verschleißteile', desc: 'Bremsen, Filter, Riemen, Zündkerzen' },
+  { icon: '🔧', title: 'Ersatzteile', desc: 'Alle Bauteile - vom Motor bis zur Karosserie' },
+  { icon: '⚙️', title: 'Zubehör', desc: 'Werkzeug, Pflegemittel, Tuning' },
+  { icon: '📦', title: 'Spezial-Bestellungen', desc: 'Premium-Marken auf Anfrage' },
+];
+
+const usps = [
+  { icon: '💰', title: 'Faire Preise', desc: 'Deutlich unter Marktdurchschnitt. Keine versteckten Kosten.' },
+  { icon: '⚡', title: 'Blitz-Lieferung', desc: 'Heute bestellt, morgen verbaut. Vieles sofort verfügbar.' },
+  { icon: '🤝', title: 'Ehrliche Beratung', desc: 'Wir verkaufen dir nur, was du wirklich brauchst.' },
+  { icon: '🚗', title: 'Alle Marken', desc: 'Von Audi bis VW. Auch Exoten und Oldtimer.' },
+];
+
+const reviews = [
+  {
+    text: 'Ich bin vom Service positiv überrascht - Bremsscheiben + Beläge sowie Zahnriemenkit habe ich heute sofort bekommen. Bei anderen Teile-Händlern habe ich viel mehr bezahlt. Ab jetzt nur noch B&A!',
+    author: 'Kunde mit Reparatur',
+  },
+  {
+    text: 'Top Autoteile-Händler - kompetent, zuverlässig und schnell! Egal ob Ersatzteile für meinen Audi oder Spezial-Zubehör für meinen BMW - alles entweder sofort verfügbar oder in kürzester Zeit beschaffbar.',
+    author: 'Stammkunde',
+  },
+  {
+    text: 'Im Vergleich zu anderen Anbietern sind die Preise deutlich niedriger. Das Team ist außerordentlich freundlich und hilfsbereit. Die Lieferung war blitzschnell. B&A ist meine erste Wahl.',
+    author: 'B2B-Kunde',
+  },
+];
+
+const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toyota', 'Honda', 'Kia', 'Hyundai', 'Renault', 'Peugeot', 'Fiat', 'Skoda', 'Seat'];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="B&A Autoteile Dortmund - Faire Preise, schneller Service | 5.0★"
+  description="Autoteile Dortmund-Mitte: WhatsApp-Foto schicken, Preis bekommen. Heute bestellt, morgen verbaut. 5.0★ aus 22 Bewertungen. Alle Marken. Samstag offen."
+>
+
+  <section class="relative overflow-hidden bg-white">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute -top-40 -right-20 w-[600px] h-[600px] rounded-full bg-red-50 blur-3xl opacity-70"></div>
+      <div class="absolute top-1/2 -left-40 w-[400px] h-[400px] rounded-full bg-gray-100 blur-3xl"></div>
+    </div>
+
+    <div class="container-x relative z-10 py-12 md:py-20 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="eyebrow">Autoteile-Händler Dortmund-Mitte</span>
+          <h1 class="mt-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.02]">
+            Autoteile<br/>
+            <span class="red-accent">fair, schnell,</span><br/>
+            ehrlich.
+          </h1>
+          <p class="mt-6 text-lg md:text-xl text-gray-700 max-w-xl">
+            Alle Marken. Faire Preise. Heute bestellt - morgen verbaut.
+            <span class="font-bold text-black">5.0★ aus 22 Bewertungen.</span>
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.711.307 1.265.489 1.697.626.713.227 1.362.195 1.875.118.572-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+              WhatsApp anfragen
+            </a>
+            <a href="tel:+4915566111551" class="btn btn-red btn-lg">📞 0155 66 111551</a>
+            <a href="/anfrage" class="btn btn-outline btn-lg">Teil suchen lassen →</a>
+          </div>
+
+          <p class="mt-5 text-sm text-gray-600 font-bold">📸 Foto schicken - Preis bekommen. So einfach.</p>
+
+          <div class="mt-8 flex flex-wrap gap-4 items-center">
+            <div class="badge-rating">
+              <span class="star">★★★★★</span>
+              <span>5.0 / 22 Reviews</span>
+            </div>
+            <span class="text-sm text-gray-600">Samstag offen · Inhaber-geführt · Dortmund-Mitte</span>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
+            <img src="https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?auto=compress&cs=tinysrgb&w=900"
+                 alt="Autoteile-Lager voller Ersatzteile" class="w-full h-full object-cover" loading="eager" decoding="async"/>
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-black text-white px-6 py-4 rounded-xl shadow-xl max-w-xs">
+            <div class="text-xs uppercase tracking-wider text-red-500 font-bold">Top 1% Reputation</div>
+            <div class="text-xl font-black mt-1">5.0★ aus 22 Bewertungen</div>
+          </div>
+          <div class="hidden md:block absolute -top-4 -right-4 bg-red-600 text-white px-5 py-3 rounded-xl shadow-xl">
+            <div class="text-xs uppercase tracking-wider opacity-80 font-bold">Schnell</div>
+            <div class="text-lg font-black">Heute - morgen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-black text-white">
+    <div class="container-x py-6 grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div>
+        <div class="text-3xl font-black red-accent">5.0★</div>
+        <div class="text-xs uppercase tracking-wider text-gray-400">22 Bewertungen</div>
+      </div>
+      <div>
+        <div class="text-3xl font-black">&lt; 30min</div>
+        <div class="text-xs uppercase tracking-wider text-gray-400">WhatsApp-Antwort</div>
+      </div>
+      <div>
+        <div class="text-3xl font-black red-accent">Heute</div>
+        <div class="text-xs uppercase tracking-wider text-gray-400">bestellt - morgen verbaut</div>
+      </div>
+      <div>
+        <div class="text-3xl font-black">100+</div>
+        <div class="text-xs uppercase tracking-wider text-gray-400">Marken im Sortiment</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-x">
+      <div class="max-w-2xl mb-12">
+        <span class="eyebrow">Was wir haben</span>
+        <h2 class="mt-3 text-3xl md:text-5xl font-black">Vom Verschleißteil bis zur Spezial-Bestellung.</h2>
+        <span class="divider-red mt-5"></span>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {kategorien.map((k) => (
+          <a href="/sortiment" class="card group">
+            <div class="text-4xl mb-3">{k.icon}</div>
+            <h3 class="text-lg font-black">{k.title}</h3>
+            <p class="text-gray-700 text-sm mt-2">{k.desc}</p>
+            <div class="mt-4 text-sm font-bold red-accent group-hover:translate-x-1 transition">Mehr →</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="black-section section relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+      <img src="https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=1600"
+           alt="" class="w-full h-full object-cover"/>
+    </div>
+    <div class="container-x relative">
+      <div class="max-w-2xl mb-12">
+        <span class="eyebrow">Warum B&amp;A?</span>
+        <h2 class="mt-3 text-3xl md:text-5xl font-black">Was unsere Kunden überzeugt.</h2>
+        <span class="divider-red mt-5"></span>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {usps.map((u) => (
+          <div class="bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10 hover:border-red-500 transition">
+            <div class="text-4xl mb-3">{u.icon}</div>
+            <h3 class="text-lg font-black text-white">{u.title}</h3>
+            <p class="text-gray-300 text-sm mt-2">{u.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section gray-section">
+    <div class="container-x">
+      <div class="max-w-2xl mb-12">
+        <span class="eyebrow">Wie wir arbeiten</span>
+        <h2 class="mt-3 text-3xl md:text-5xl font-black">In 3 Schritten zum Teil.</h2>
+        <span class="divider-red mt-5"></span>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-7 border border-gray-300">
+          <div class="text-6xl font-black red-accent leading-none">01</div>
+          <h3 class="text-xl font-black mt-3">Foto / Nummer schicken</h3>
+          <p class="text-gray-700 mt-2">Du schickst uns das Teil per WhatsApp - Foto oder Teile-Nummer reicht.</p>
+        </div>
+        <div class="bg-white rounded-xl p-7 border border-gray-300">
+          <div class="text-6xl font-black red-accent leading-none">02</div>
+          <h3 class="text-xl font-black mt-3">Wir prüfen Preis &amp; Lager</h3>
+          <p class="text-gray-700 mt-2">Wir checken Verfügbarkeit, geben dir Preis und Liefer-Zeit zurück - meist unter 30 Min.</p>
+        </div>
+        <div class="bg-white rounded-xl p-7 border border-gray-300">
+          <div class="text-6xl font-black red-accent leading-none">03</div>
+          <h3 class="text-xl font-black mt-3">Abholen oder Versand</h3>
+          <p class="text-gray-700 mt-2">Heute bestellt - oft morgen verbaut. Selbstabholung in Dortmund-Mitte oder Versand.</p>
+        </div>
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">📱 Jetzt WhatsApp-Anfrage starten</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-x">
+      <div class="max-w-2xl mb-12">
+        <span class="eyebrow">Echte Stimmen</span>
+        <h2 class="mt-3 text-3xl md:text-5xl font-black">5.0★ aus 22 Bewertungen.</h2>
+        <span class="divider-red mt-5"></span>
+        <p class="mt-4 text-gray-700">Was unsere Kunden auf Google sagen.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        {reviews.map((r) => (
+          <div class="card">
+            <div class="text-red-600 text-lg font-bold mb-3">★★★★★</div>
+            <p class="text-gray-800 leading-relaxed">"{r.text}"</p>
+            <div class="mt-5 pt-4 border-t border-gray-200 text-sm font-bold">- {r.author}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-gray-100 border-y border-gray-300">
+    <div class="container-x">
+      <div class="text-center mb-6">
+        <span class="eyebrow">Alle Marken</span>
+        <h3 class="mt-2 text-xl md:text-2xl font-black">Wir liefern für jedes Auto.</h3>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3">
+        {marken.map((m) => (
+          <span class="px-5 py-2.5 bg-white border border-gray-300 rounded-lg text-sm font-bold text-gray-800">{m}</span>
+        ))}
+        <span class="px-5 py-2.5 bg-black text-white rounded-lg text-sm font-bold">+ viele mehr</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-x">
+      <div class="bg-black text-white rounded-2xl p-8 md:p-12 grid md:grid-cols-2 gap-8 items-center relative overflow-hidden">
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-red-600/20 blur-3xl pointer-events-none"></div>
+        <div class="relative">
+          <span class="inline-block px-3 py-1 bg-red-600 text-white text-xs font-black uppercase tracking-widest rounded">Coming Soon</span>
+          <h2 class="mt-4 text-3xl md:text-4xl font-black text-white">Bald: Online-Shop.</h2>
+          <p class="mt-4 text-gray-300 max-w-md">
+            Wir bauen unseren Online-Shop. Bis dahin: WhatsApp-Foto schicken, Preis bekommen, Teil holen. Schneller geht's nicht.
+          </p>
+        </div>
+        <div class="relative flex md:justify-end">
+          <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">📱 Jetzt anfragen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gray-section">
+    <div class="container-x">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <span class="eyebrow">Standort</span>
+          <h2 class="mt-3 text-3xl md:text-5xl font-black">In Dortmund-Mitte.<br/>Auch Samstag offen.</h2>
+          <span class="divider-red mt-5"></span>
+
+          <div class="mt-8 space-y-5">
+            <div>
+              <div class="text-xs uppercase tracking-widest font-bold text-gray-600">Adresse</div>
+              <div class="text-lg font-bold mt-1">Bleichmärsch 24<br/>44145 Dortmund-Mitte</div>
+            </div>
+            <div>
+              <div class="text-xs uppercase tracking-widest font-bold text-gray-600">Öffnungszeiten</div>
+              <div class="text-lg font-bold mt-1">
+                Mo - Fr: 09:00 - 17:30<br/>
+                Sa: <span class="red-accent">09:00 - 14:00</span><br/>
+                So: geschlossen
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3 pt-2">
+              <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp</a>
+              <a href="tel:+4915566111551" class="btn btn-red">📞 Anrufen</a>
+              <a href="/kontakt" class="btn btn-outline">Alle Kontakte</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden shadow-xl border border-gray-300 aspect-square lg:aspect-auto lg:h-[500px]">
+          <iframe
+            src="https://maps.google.com/maps?q=Bleichm%C3%A4rsch%2024%2C%2044145%20Dortmund&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="B&A Autoteile auf Google Maps"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="black-section py-16 md:py-20">
+    <div class="container-x text-center">
+      <h2 class="text-3xl md:text-5xl font-black text-white">Teil gesucht?<br/><span class="red-accent">Foto schicken - Preis bekommen.</span></h2>
+      <p class="mt-5 text-gray-300 max-w-xl mx-auto">Die schnellste Art, an dein Teil zu kommen. Antwort meist unter 30 Min während Öffnungszeiten.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">📱 WhatsApp starten</a>
+        <a href="tel:+4915566111551" class="btn btn-red btn-lg">📞 0155 66 111551</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

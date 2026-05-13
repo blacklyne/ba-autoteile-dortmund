@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const wa = 'https://wa.me/4915566111551?text=Hallo%2C%20ich%20suche%20folgendes%20Teil%3A%20';
+
+const werte = [
+  { icon: '🤝', title: 'Ehrlichkeit', desc: 'Wir reden dir nichts ein. Du bekommst, was du brauchst - nicht mehr, nicht weniger.' },
+  { icon: '⚡', title: 'Schnelligkeit', desc: 'Heute bestellt, morgen verbaut. Anfrage per WhatsApp - Antwort meist unter 30 Min.' },
+  { icon: '💰', title: 'Fairness', desc: 'Preise deutlich unter Marktdurchschnitt. Keine versteckten Kosten.' },
+  { icon: '🎯', title: 'Kompetenz', desc: 'Wir kennen Teile. Wir kennen Autos. Echte Experten arbeiten hier.' },
+];
+---
+
+<Layout
+  title="Über uns | B&A Autoteile Dortmund - Inhaber-geführter Teile-Händler"
+  description="B&A Autoteile in Dortmund-Mitte. Inhaber-geführt, 5.0★ aus 22 Bewertungen. Wir stehen für faire Preise, ehrliche Beratung und schnellen Service."
+>
+
+  <section class="bg-black text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-25">
+      <img src="https://images.pexels.com/photos/3807329/pexels-photo-3807329.jpeg?auto=compress&cs=tinysrgb&w=1600"
+           alt="" class="w-full h-full object-cover"/>
+    </div>
+    <div class="container-x relative py-16 md:py-24">
+      <span class="eyebrow">Über uns</span>
+      <h1 class="mt-3 text-4xl md:text-6xl font-black text-white text-shadow-strong">
+        Wer wir sind.
+      </h1>
+      <p class="mt-5 text-lg text-gray-200 max-w-2xl">
+        Inhaber-geführter Autoteile-Händler in Dortmund-Mitte. Klein genug für persönlichen Service, groß genug fürs komplette Sortiment.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-x">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="eyebrow">Unsere Geschichte</span>
+          <h2 class="mt-3 text-3xl md:text-5xl font-black">Zwei Inhaber.<br/><span class="red-accent">Ein Anspruch.</span></h2>
+          <span class="divider-red mt-5"></span>
+          <div class="mt-6 space-y-4 text-gray-800 leading-relaxed text-lg">
+            <p>
+              B&amp;A steht für die zwei Inhaber, die diesen Betrieb mit Leidenschaft führen. Wir kommen vom Auto - nicht vom Schreibtisch.
+            </p>
+            <p>
+              Was unsere Kunden bei uns finden, ist nicht nur ein riesiges Teile-Sortiment, sondern vor allem das, was im Autoteile-Handel selten geworden ist: <strong>Zeit, Beratung und ein faires Wort.</strong>
+            </p>
+            <p>
+              22 Google-Bewertungen mit 5.0★ sind unser bester Beweis. Wir machen weiter so - jeden Tag.
+            </p>
+          </div>
+
+          <div class="mt-8 inline-flex items-center gap-3 px-5 py-4 bg-black text-white rounded-xl">
+            <span class="text-red-500 font-bold text-lg">★★★★★</span>
+            <span class="font-bold">5.0 aus 22 Bewertungen auf Google</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden">
+            <img src="https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=600"
+                 alt="Autoteile-Lager" class="w-full h-full object-cover" loading="lazy"/>
+          </div>
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden mt-8">
+            <img src="https://images.pexels.com/photos/5835359/pexels-photo-5835359.jpeg?auto=compress&cs=tinysrgb&w=600"
+                 alt="Werkzeuge und Teile" class="w-full h-full object-cover" loading="lazy"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="black-section section">
+    <div class="container-x">
+      <div class="max-w-2xl mb-12">
+        <span class="eyebrow">Unsere Werte</span>
+        <h2 class="mt-3 text-3xl md:text-5xl font-black text-white">Wofür wir stehen.</h2>
+        <span class="divider-red mt-5"></span>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {werte.map((w) => (
+          <div class="bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10 hover:border-red-500 transition">
+            <div class="text-4xl mb-3">{w.icon}</div>
+            <h3 class="text-lg font-black text-white">{w.title}</h3>
+            <p class="text-gray-300 text-sm mt-2">{w.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section gray-section">
+    <div class="container-x text-center">
+      <h2 class="text-3xl md:text-5xl font-black">Komm vorbei.<br/><span class="red-accent">Oder schreib uns.</span></h2>
+      <p class="mt-5 text-gray-700 max-w-xl mx-auto">
+        Bleichmärsch 24, 44145 Dortmund-Mitte. Samstag offen. Kaffee gibt's auch.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">📱 WhatsApp</a>
+        <a href="tel:+4915566111551" class="btn btn-red btn-lg">📞 Anrufen</a>
+        <a href="/kontakt" class="btn btn-outline btn-lg">Kontakt &amp; Anfahrt</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

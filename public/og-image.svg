@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A0A0A"/>
+      <stop offset="1" stop-color="#171717"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#DC2626"/>
+  <rect x="0" y="624" width="1200" height="6" fill="#DC2626"/>
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="80" y="220" font-size="44" font-weight="700" fill="#DC2626" letter-spacing="6">AUTOTEILE DORTMUND - MITTE</text>
+    <text x="80" y="340" font-size="98" font-weight="900" fill="#FFFFFF">B<tspan fill="#DC2626">&amp;</tspan>A Autoteile</text>
+    <text x="80" y="420" font-size="40" font-weight="800" fill="#FFFFFF">Fair. Schnell. Ehrlich.</text>
+    <text x="80" y="510" font-size="28" font-weight="600" fill="#D4D4D4">Heute bestellt - morgen verbaut. 5.0 aus 22 Bewertungen.</text>
+    <text x="80" y="570" font-size="22" font-weight="700" fill="#25D366">WhatsApp: +49 15566 111551</text>
+  </g>
+</svg>

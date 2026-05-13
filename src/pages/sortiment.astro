@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const wa = 'https://wa.me/4915566111551?text=Hallo%2C%20ich%20suche%20folgendes%20Teil%3A%20';
+
+const kategorien = [
+  {
+    icon: '🛞',
+    title: 'Verschleißteile',
+    image: 'https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=900',
+    items: ['Bremsen (Scheiben, Beläge, Sättel)', 'Filter (Öl, Luft, Innenraum, Kraftstoff)', 'Ölwechsel-Sets', 'Zündkerzen', 'Riemen (Keil, Zahn)', 'Stoßdämpfer', 'Achs-Teile'],
+  },
+  {
+    icon: '⚡',
+    title: 'Elektrik',
+    image: 'https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=900',
+    items: ['Batterien', 'Lichtmaschinen', 'Anlasser', 'Glühkerzen', 'Sensoren (alle Arten)', 'Kabelbäume', 'Zündspulen'],
+  },
+  {
+    icon: '🚪',
+    title: 'Karosserie',
+    image: 'https://images.pexels.com/photos/3807329/pexels-photo-3807329.jpeg?auto=compress&cs=tinysrgb&w=900',
+    items: ['Stoßfänger', 'Spiegel (manuell + elektrisch)', 'Lampen (LED, Halogen, Xenon)', 'Scheiben', 'Türgriffe', 'Kotflügel'],
+  },
+  {
+    icon: '🔥',
+    title: 'Motor',
+    image: 'https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=900',
+    items: ['Motorteile aller Art', 'Kupplungen', 'Wasserpumpen', 'Thermostate', 'Auspuff-Anlagen', 'Turbolader', 'Einspritzdüsen'],
+  },
+  {
+    icon: '🔧',
+    title: 'Zubehör',
+    image: 'https://images.pexels.com/photos/5835359/pexels-photo-5835359.jpeg?auto=compress&cs=tinysrgb&w=900',
+    items: ['Werkzeuge (Hobby + Profi)', 'Pflegemittel', 'Lacke + Lack-Korrektur', 'Tuning-Teile', 'Innenraum-Zubehör'],
+  },
+  {
+    icon: '📦',
+    title: 'Spezial-Bestellung',
+    image: 'https://images.pexels.com/photos/4489734/pexels-photo-4489734.jpeg?auto=compress&cs=tinysrgb&w=900',
+    items: ['Premium-Marken', 'Original-Teile (OEM)', 'Oldtimer-Teile', 'Importteile', 'Schnelle Beschaffung'],
+  },
+];
+---
+
+<Layout
+  title="Sortiment | B&A Autoteile Dortmund - Verschleißteile, Ersatzteile, Zubehör"
+  description="Das komplette Autoteile-Sortiment in Dortmund: Bremsen, Filter, Elektrik, Karosserie, Motor, Zubehör. Alle Marken. Heute bestellt, morgen verbaut."
+>
+
+  <section class="bg-black text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-25">
+      <img src="https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?auto=compress&cs=tinysrgb&w=1600"
+           alt="" class="w-full h-full object-cover"/>
+    </div>
+    <div class="container-x relative py-16 md:py-24">
+      <span class="eyebrow">Unser Sortiment</span>
+      <h1 class="mt-3 text-4xl md:text-6xl font-black text-white text-shadow-strong">
+        Alles, was dein Auto<br/><span class="red-accent">am Laufen hält.</span>
+      </h1>
+      <p class="mt-5 text-lg text-gray-200 max-w-2xl">
+        Von der Bremsscheibe bis zum Turbolader. Wir haben das Meiste auf Lager - und besorgen den Rest blitzschnell.
+      </p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">📱 Teil per WhatsApp anfragen</a>
+        <a href="tel:+4915566111551" class="btn btn-outline-white btn-lg">📞 Anrufen</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-x">
+      <div class="grid lg:grid-cols-2 gap-8">
+        {kategorien.map((k) => (
+          <div class="card overflow-hidden p-0">
+            <div class="aspect-[16/9] overflow-hidden bg-gray-100">
+              <img src={k.image} alt={k.title} class="w-full h-full object-cover" loading="lazy"/>
+            </div>
+            <div class="p-7">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="text-3xl">{k.icon}</div>
+                <h2 class="text-2xl md:text-3xl font-black">{k.title}</h2>
+              </div>
+              <ul class="mt-4 space-y-2">
+                {k.items.map((item) => (
+                  <li class="flex items-start gap-2 text-gray-800">
+                    <span class="red-accent font-black mt-0.5">→</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section gray-section">
+    <div class="container-x text-center">
+      <h2 class="text-3xl md:text-5xl font-black">Nicht dabei? <span class="red-accent">Wir besorgen es.</span></h2>
+      <p class="mt-5 text-gray-700 max-w-xl mx-auto">
+        Über 100.000 Teile sind innerhalb kürzester Zeit beschaffbar. Schick uns einfach Foto oder Teile-Nummer per WhatsApp.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">📱 Anfrage starten</a>
+        <a href="/anfrage" class="btn btn-black btn-lg">Anfrage-Formular →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="black-section section">
+    <div class="container-x">
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div>
+          <div class="text-5xl mb-2">💰</div>
+          <h3 class="text-xl font-black text-white">Faire Preise</h3>
+          <p class="text-gray-300 mt-2">Deutlich unter Marktdurchschnitt - bestätigt von unseren Kunden.</p>
+        </div>
+        <div>
+          <div class="text-5xl mb-2">⚡</div>
+          <h3 class="text-xl font-black text-white">Blitz-Lieferung</h3>
+          <p class="text-gray-300 mt-2">Vieles sofort verfügbar. Spezial-Bestellungen oft schon am nächsten Tag.</p>
+        </div>
+        <div>
+          <div class="text-5xl mb-2">🤝</div>
+          <h3 class="text-xl font-black text-white">Ehrliche Beratung</h3>
+          <p class="text-gray-300 mt-2">Wir verkaufen dir nur das, was du wirklich brauchst.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

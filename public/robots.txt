@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ba-autoteile-dortmund.pages.dev/sitemap-index.xml
