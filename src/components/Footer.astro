@@ -1,4 +1,5 @@
 ---
+import Icon from './Icon.astro';
 const year = new Date().getFullYear();
 const wa = 'https://wa.me/4915566111551?text=Hallo%2C%20ich%20suche%20folgendes%20Teil%3A%20';
 ---
@@ -22,11 +23,11 @@ const wa = 'https://wa.me/4915566111551?text=Hallo%2C%20ich%20suche%20folgendes%
 
       <div>
         <h4 class="text-sm font-black uppercase tracking-widest mb-4 text-red-500">Kontakt</h4>
-        <ul class="space-y-2 text-gray-300">
-          <li><a href="tel:+4915566111551" class="hover:text-white">📞 +49 15566 111551</a></li>
-          <li><a href={wa} target="_blank" rel="noopener" class="hover:text-white">💬 WhatsApp</a></li>
-          <li><a href="mailto:info@ba-autoteile.de" class="hover:text-white">✉ info@ba-autoteile.de</a></li>
-          <li class="pt-2">Bleichmärsch 24<br/>44145 Dortmund-Mitte</li>
+        <ul class="space-y-3 text-gray-300">
+          <li><a href="tel:+4915566111551" class="inline-flex items-center gap-2 hover:text-white"><Icon name="phone" size={16} class="red-accent"/> +49 15566 111551</a></li>
+          <li><a href={wa} target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-white"><Icon name="whatsapp" size={16} class="red-accent"/> WhatsApp</a></li>
+          <li><a href="mailto:info@ba-autoteile.de" class="inline-flex items-center gap-2 hover:text-white"><Icon name="mail" size={16} class="red-accent"/> info@ba-autoteile.de</a></li>
+          <li class="flex items-start gap-2 pt-2"><Icon name="pin" size={16} class="red-accent flex-shrink-0 mt-0.5"/> <span>Bleichmärsch 24<br/>44145 Dortmund-Mitte</span></li>
         </ul>
       </div>
 

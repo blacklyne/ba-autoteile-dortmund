@@ -1,52 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 
 const wa = 'https://wa.me/4915566111551?text=Hallo%2C%20ich%20suche%20folgendes%20Teil%3A%20';
 
 const gruppen = [
   {
-    flag: '🇩🇪',
-    title: 'Deutsche Marken',
+    region: 'Deutschland',
     marken: ['Audi', 'BMW', 'Mercedes-Benz', 'VW', 'Opel', 'Porsche', 'Smart', 'Mini'],
   },
   {
-    flag: '🇯🇵',
-    title: 'Asiatische Marken',
+    region: 'Japan',
     marken: ['Toyota', 'Honda', 'Mazda', 'Nissan', 'Mitsubishi', 'Suzuki', 'Subaru', 'Lexus', 'Infiniti'],
   },
   {
-    flag: '🇰🇷',
-    title: 'Korea',
+    region: 'Korea',
     marken: ['Kia', 'Hyundai', 'SsangYong'],
   },
   {
-    flag: '🇫🇷',
-    title: 'Französische Marken',
+    region: 'Frankreich',
     marken: ['Renault', 'Peugeot', 'Citroën', 'DS', 'Dacia'],
   },
   {
-    flag: '🇮🇹',
-    title: 'Italienische Marken',
+    region: 'Italien',
     marken: ['Fiat', 'Alfa Romeo', 'Lancia', 'Maserati'],
   },
   {
-    flag: '🇪🇸',
-    title: 'Spanien',
+    region: 'Spanien',
     marken: ['Seat'],
   },
   {
-    flag: '🇨🇿',
-    title: 'Tschechien',
+    region: 'Tschechien',
     marken: ['Skoda'],
   },
   {
-    flag: '🇺🇸',
-    title: 'Amerikanische Marken',
+    region: 'USA',
     marken: ['Ford', 'Jeep', 'Chrysler', 'Dodge', 'Tesla'],
   },
   {
-    flag: '🇸🇪',
-    title: 'Skandinavien',
+    region: 'Schweden',
     marken: ['Volvo', 'Saab'],
   },
 ];
@@ -78,9 +70,11 @@ const gruppen = [
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {gruppen.map((g) => (
           <div class="card">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="text-3xl">{g.flag}</span>
-              <h2 class="text-xl font-black">{g.title}</h2>
+            <div class="flex items-center gap-3 mb-4 pb-4 border-b border-gray-200">
+              <div class="w-10 h-10 rounded-lg bg-black text-white flex items-center justify-center flex-shrink-0">
+                <Icon name="car" size={20}/>
+              </div>
+              <h2 class="text-xl font-black">{g.region}</h2>
             </div>
             <div class="flex flex-wrap gap-2">
               {g.marken.map((m) => (
@@ -91,15 +85,22 @@ const gruppen = [
         ))}
       </div>
 
-      <div class="mt-12 bg-black text-white rounded-2xl p-8 md:p-12 text-center">
-        <span class="text-xs uppercase tracking-widest font-black red-accent">Auch Exoten + Oldtimer</span>
-        <h2 class="mt-3 text-3xl md:text-4xl font-black text-white">Deine Marke nicht dabei? <span class="red-accent">Frag uns.</span></h2>
-        <p class="mt-4 text-gray-300 max-w-xl mx-auto">
-          Wir beschaffen Teile für nahezu alle Marken weltweit - auch für Oldtimer und seltene Modelle. Schick einfach Foto oder Teile-Nummer.
-        </p>
-        <div class="mt-7 flex flex-wrap justify-center gap-3">
-          <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">📱 WhatsApp anfragen</a>
-          <a href="/anfrage" class="btn btn-outline-white btn-lg">Anfrage-Formular →</a>
+      <div class="mt-14 bg-black text-white rounded-2xl p-8 md:p-14 text-center relative overflow-hidden">
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-red-600/20 blur-3xl pointer-events-none"></div>
+        <div class="relative">
+          <span class="text-xs uppercase tracking-widest font-black red-accent">Auch Exoten + Oldtimer</span>
+          <h2 class="mt-3 text-3xl md:text-4xl font-black text-white">Deine Marke nicht dabei? <span class="red-accent">Frag uns.</span></h2>
+          <p class="mt-4 text-gray-300 max-w-xl mx-auto">
+            Wir beschaffen Teile für nahezu alle Marken weltweit - auch für Oldtimer und seltene Modelle. Schick einfach Foto oder Teile-Nummer.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+              <Icon name="whatsapp" size={18}/> WhatsApp anfragen
+            </a>
+            <a href="tel:+4915566111551" class="btn btn-outline-white btn-lg">
+              <Icon name="phone" size={18}/> Anrufen
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -107,18 +108,18 @@ const gruppen = [
 
   <section class="section gray-section">
     <div class="container-x">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div>
           <span class="eyebrow">Original oder gleichwertig</span>
           <h2 class="mt-3 text-3xl md:text-5xl font-black">OEM oder Aftermarket - <span class="red-accent">du entscheidest.</span></h2>
           <span class="divider-red mt-5"></span>
-          <p class="mt-6 text-gray-700 text-lg">
+          <p class="mt-6 text-gray-700 text-lg leading-relaxed">
             Wir führen sowohl Original-Teile (OEM) als auch hochwertige Alternativen von Premium-Herstellern. Was passt, hängt von deinem Budget und Anspruch ab - wir beraten dich ehrlich.
           </p>
-          <ul class="mt-6 space-y-2 text-gray-800">
-            <li class="flex gap-2"><span class="red-accent font-black">→</span> Bosch, Continental, Mahle, Sachs, ATE, TRW</li>
-            <li class="flex gap-2"><span class="red-accent font-black">→</span> Original-Hersteller-Teile</li>
-            <li class="flex gap-2"><span class="red-accent font-black">→</span> Geprüfte Gebrauchtteile auf Anfrage</li>
+          <ul class="mt-6 space-y-3 text-gray-800">
+            <li class="flex items-start gap-3"><Icon name="check" size={18} class="red-accent flex-shrink-0 mt-1"/> Bosch, Continental, Mahle, Sachs, ATE, TRW</li>
+            <li class="flex items-start gap-3"><Icon name="check" size={18} class="red-accent flex-shrink-0 mt-1"/> Original-Hersteller-Teile</li>
+            <li class="flex items-start gap-3"><Icon name="check" size={18} class="red-accent flex-shrink-0 mt-1"/> Geprüfte Gebrauchtteile auf Anfrage</li>
           </ul>
         </div>
         <div class="aspect-square rounded-2xl overflow-hidden shadow-xl">

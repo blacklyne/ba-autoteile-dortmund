@@ -1,16 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 
 const wa = 'https://wa.me/4915566111551?text=Hallo%2C%20ich%20suche%20folgendes%20Teil%3A%20';
 ---
 
 <Layout
   title="Anfrage | B&A Autoteile Dortmund - Foto schicken, Preis bekommen"
-  description="Autoteile anfragen in Dortmund: WhatsApp-Foto schicken, Preis und Verfügbarkeit in < 30 Min erhalten. Oder Formular ausfüllen. 5.0★ Reputation."
+  description="Autoteile anfragen in Dortmund: WhatsApp-Foto schicken, Preis und Verfügbarkeit in unter 30 Min erhalten. 5.0 Sterne Reputation."
 >
 
   <section class="bg-black text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-30">
+    <div class="absolute inset-0 opacity-25">
       <img src="/images/oel-regal.jpg"
            alt="" class="w-full h-full object-cover"/>
     </div>
@@ -20,128 +21,155 @@ const wa = 'https://wa.me/4915566111551?text=Hallo%2C%20ich%20suche%20folgendes%
         Teil gesucht?<br/><span class="red-accent">In 2 Minuten zur Antwort.</span>
       </h1>
       <p class="mt-5 text-lg text-gray-200 max-w-2xl">
-        Drei Wege - du wählst, was am schnellsten geht. WhatsApp ist bei uns die Nr. 1.
+        WhatsApp ist am schnellsten - Foto vom Teil schicken, Preis bekommen. So einfach.
       </p>
     </div>
   </section>
 
   <section class="section">
     <div class="container-x">
-      <div class="grid lg:grid-cols-3 gap-6">
+      <div class="grid lg:grid-cols-3 gap-6 items-stretch">
 
-        <a href={wa} target="_blank" rel="noopener" class="card relative overflow-hidden hover:border-[#25D366] lg:scale-105">
-          <span class="absolute top-4 right-4 px-3 py-1 bg-[#25D366] text-white text-xs font-black uppercase tracking-widest rounded">Bevorzugt</span>
-          <div class="text-5xl mb-3">📱</div>
-          <h2 class="text-2xl font-black">WhatsApp-Anfrage</h2>
-          <p class="text-gray-700 mt-3">
-            Foto vom Teil oder Teile-Nummer schicken. Antwort meist <strong class="text-black">unter 30 Min</strong> während Öffnungszeiten.
-          </p>
-          <ul class="mt-4 space-y-1.5 text-sm text-gray-800">
-            <li class="flex gap-2"><span class="text-green-600 font-black">✓</span> Schnellste Variante</li>
-            <li class="flex gap-2"><span class="text-green-600 font-black">✓</span> Foto direkt vom Handy</li>
-            <li class="flex gap-2"><span class="text-green-600 font-black">✓</span> Direkter Draht zu uns</li>
-          </ul>
-          <span class="btn btn-whatsapp btn-lg w-full mt-6">WhatsApp öffnen</span>
+        <a href={wa} target="_blank" rel="noopener"
+           class="group relative overflow-hidden rounded-2xl bg-[#25D366] text-white p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all lg:scale-105 hover:-translate-y-1">
+          <div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-white/10 blur-2xl"></div>
+          <div class="absolute -right-8 -bottom-8 w-40 h-40 rounded-full bg-black/10 blur-2xl"></div>
+
+          <div class="relative">
+            <span class="inline-block px-3 py-1 bg-white text-[#25D366] text-xs font-black uppercase tracking-widest rounded">Bevorzugt</span>
+
+            <div class="mt-6 w-14 h-14 rounded-xl bg-white/15 backdrop-blur flex items-center justify-center">
+              <Icon name="whatsapp" size={32}/>
+            </div>
+
+            <h2 class="mt-6 text-3xl font-black">WhatsApp</h2>
+            <p class="mt-3 text-white/90 leading-relaxed">
+              Foto vom Teil oder Teile-Nummer schicken. Antwort meist unter 30 Min während Öffnungszeiten.
+            </p>
+
+            <ul class="mt-6 space-y-2 text-sm">
+              <li class="flex gap-2"><Icon name="check" size={16}/> Schnellste Variante</li>
+              <li class="flex gap-2"><Icon name="check" size={16}/> Foto direkt vom Handy</li>
+              <li class="flex gap-2"><Icon name="check" size={16}/> Direkter Draht zu uns</li>
+            </ul>
+
+            <div class="mt-8 inline-flex items-center gap-2 font-bold uppercase tracking-wide text-sm group-hover:gap-3 transition-all">
+              Chat öffnen <Icon name="arrow" size={16}/>
+            </div>
+          </div>
         </a>
 
-        <a href="tel:+4915566111551" class="card hover:border-red-600">
-          <div class="text-5xl mb-3">📞</div>
-          <h2 class="text-2xl font-black">Telefon</h2>
-          <p class="text-gray-700 mt-3">
-            Direkter Anruf zur persönlichen Beratung. Beste Wahl bei komplexen Fragen.
-          </p>
-          <ul class="mt-4 space-y-1.5 text-sm text-gray-800">
-            <li class="flex gap-2"><span class="text-red-600 font-black">✓</span> Persönliche Beratung</li>
-            <li class="flex gap-2"><span class="text-red-600 font-black">✓</span> Komplexe Anfragen klären</li>
-            <li class="flex gap-2"><span class="text-red-600 font-black">✓</span> Während Öffnungszeiten</li>
-          </ul>
-          <span class="btn btn-red btn-lg w-full mt-6">+49 15566 111551</span>
+        <a href="tel:+4915566111551"
+           class="group relative overflow-hidden rounded-2xl bg-black text-white p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+          <div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-red-600/30 blur-2xl"></div>
+
+          <div class="relative">
+            <span class="inline-block px-3 py-1 bg-red-600 text-white text-xs font-black uppercase tracking-widest rounded">Persönlich</span>
+
+            <div class="mt-6 w-14 h-14 rounded-xl bg-red-600 flex items-center justify-center">
+              <Icon name="phone" size={28}/>
+            </div>
+
+            <h2 class="mt-6 text-3xl font-black text-white">Telefon</h2>
+            <p class="mt-3 text-gray-300 leading-relaxed">
+              Direkter Anruf zur persönlichen Beratung. Beste Wahl bei komplexen Fragen.
+            </p>
+
+            <ul class="mt-6 space-y-2 text-sm text-gray-300">
+              <li class="flex gap-2"><Icon name="check" size={16} class="red-accent"/> Persönliche Beratung</li>
+              <li class="flex gap-2"><Icon name="check" size={16} class="red-accent"/> Komplexe Anfragen klären</li>
+              <li class="flex gap-2"><Icon name="check" size={16} class="red-accent"/> Während Öffnungszeiten</li>
+            </ul>
+
+            <div class="mt-8 inline-flex items-center gap-2 font-bold uppercase tracking-wide text-sm text-red-500 group-hover:gap-3 transition-all">
+              0155 66 111551 <Icon name="arrow" size={16}/>
+            </div>
+          </div>
         </a>
 
-        <a href="#formular" class="card hover:border-black">
-          <div class="text-5xl mb-3">📋</div>
-          <h2 class="text-2xl font-black">Formular</h2>
-          <p class="text-gray-700 mt-3">
-            Klassisch per Formular. Wir melden uns am gleichen Tag zurück.
-          </p>
-          <ul class="mt-4 space-y-1.5 text-sm text-gray-800">
-            <li class="flex gap-2"><span class="font-black">✓</span> Außerhalb Öffnungszeiten</li>
-            <li class="flex gap-2"><span class="font-black">✓</span> Strukturierte Anfrage</li>
-            <li class="flex gap-2"><span class="font-black">✓</span> Antwort gleichen Tag</li>
-          </ul>
-          <span class="btn btn-outline btn-lg w-full mt-6">Zum Formular ↓</span>
+        <a href="mailto:info@ba-autoteile.de"
+           class="group relative overflow-hidden rounded-2xl bg-white border border-gray-300 text-black p-8 md:p-10 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 hover:border-black">
+          <div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-gray-100 blur-2xl"></div>
+
+          <div class="relative">
+            <span class="inline-block px-3 py-1 bg-black text-white text-xs font-black uppercase tracking-widest rounded">Asynchron</span>
+
+            <div class="mt-6 w-14 h-14 rounded-xl bg-black text-white flex items-center justify-center">
+              <Icon name="mail" size={28}/>
+            </div>
+
+            <h2 class="mt-6 text-3xl font-black">E-Mail</h2>
+            <p class="mt-3 text-gray-700 leading-relaxed">
+              Für alles, was nicht eilig ist. Wir melden uns am gleichen Tag zurück.
+            </p>
+
+            <ul class="mt-6 space-y-2 text-sm text-gray-800">
+              <li class="flex gap-2"><Icon name="check" size={16} class="red-accent"/> Außerhalb Öffnungszeiten</li>
+              <li class="flex gap-2"><Icon name="check" size={16} class="red-accent"/> Mit Anhängen möglich</li>
+              <li class="flex gap-2"><Icon name="check" size={16} class="red-accent"/> Antwort am gleichen Tag</li>
+            </ul>
+
+            <div class="mt-8 inline-flex items-center gap-2 font-bold uppercase tracking-wide text-sm text-black group-hover:gap-3 transition-all">
+              info@ba-autoteile.de <Icon name="arrow" size={16}/>
+            </div>
+          </div>
         </a>
 
       </div>
 
-      <div class="mt-12 text-center">
+      <div class="mt-14 text-center">
         <div class="inline-flex items-center gap-3 px-5 py-3 bg-gray-100 border border-gray-300 rounded-full">
-          <span class="text-red-600 font-bold">★★★★★</span>
+          <span class="text-red-600 font-bold tracking-wider">★★★★★</span>
           <span class="text-sm font-bold">5.0 aus 22 Bewertungen - unsere Kunden vertrauen uns.</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="formular" class="section gray-section">
+  <section class="section gray-section">
     <div class="container-x">
-      <div class="max-w-2xl mx-auto">
-        <span class="eyebrow">Teile-Anfrage-Formular</span>
-        <h2 class="mt-3 text-3xl md:text-4xl font-black">Sag uns, was du brauchst.</h2>
+      <div class="max-w-3xl mx-auto">
+        <span class="eyebrow">So läuft's ab</span>
+        <h2 class="mt-3 text-3xl md:text-5xl font-black">Was du uns schicken solltest.</h2>
         <span class="divider-red mt-5"></span>
 
-        <form action="https://formspree.io/f/your-form-id" method="POST" class="mt-8 bg-white rounded-2xl p-6 md:p-8 border border-gray-300 space-y-5">
-          <div class="grid sm:grid-cols-2 gap-5">
-            <div>
-              <label for="marke" class="block text-sm font-bold mb-1.5">Marke *</label>
-              <input id="marke" name="marke" required type="text" placeholder="z.B. Audi" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-black focus:ring-2 focus:ring-black/10 outline-none"/>
+        <div class="mt-10 grid sm:grid-cols-2 gap-5">
+          <div class="bg-white rounded-xl p-6 border border-gray-300">
+            <div class="w-11 h-11 rounded-lg bg-black text-white flex items-center justify-center mb-4">
+              <Icon name="camera" size={22}/>
             </div>
-            <div>
-              <label for="modell" class="block text-sm font-bold mb-1.5">Modell *</label>
-              <input id="modell" name="modell" required type="text" placeholder="z.B. A4 Avant" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-black focus:ring-2 focus:ring-black/10 outline-none"/>
-            </div>
+            <h3 class="font-black text-lg">Foto vom Teil</h3>
+            <p class="text-gray-700 text-sm mt-2">Am besten ein klares Bild - auch vom defekten Teil. Reicht uns oft schon zum Identifizieren.</p>
           </div>
-
-          <div class="grid sm:grid-cols-2 gap-5">
-            <div>
-              <label for="baujahr" class="block text-sm font-bold mb-1.5">Baujahr</label>
-              <input id="baujahr" name="baujahr" type="text" placeholder="z.B. 2018" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-black focus:ring-2 focus:ring-black/10 outline-none"/>
+          <div class="bg-white rounded-xl p-6 border border-gray-300">
+            <div class="w-11 h-11 rounded-lg bg-black text-white flex items-center justify-center mb-4">
+              <Icon name="search" size={22}/>
             </div>
-            <div>
-              <label for="teilenummer" class="block text-sm font-bold mb-1.5">Teile-Nummer (falls bekannt)</label>
-              <input id="teilenummer" name="teilenummer" type="text" placeholder="OEM-Nummer" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-black focus:ring-2 focus:ring-black/10 outline-none"/>
+            <h3 class="font-black text-lg">Teile-Nummer</h3>
+            <p class="text-gray-700 text-sm mt-2">Falls bekannt: OEM- oder Hersteller-Nummer. Dann geht's noch schneller.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-300">
+            <div class="w-11 h-11 rounded-lg bg-black text-white flex items-center justify-center mb-4">
+              <Icon name="car" size={22}/>
             </div>
+            <h3 class="font-black text-lg">Fahrzeug-Daten</h3>
+            <p class="text-gray-700 text-sm mt-2">Marke, Modell, Baujahr - oder gleich die FIN. Hilft uns, das passende Teil zu finden.</p>
           </div>
-
-          <div>
-            <label for="gesucht" class="block text-sm font-bold mb-1.5">Was wird gesucht? *</label>
-            <textarea id="gesucht" name="gesucht" required rows="4" placeholder="z.B. Bremsscheiben + Beläge vorn, am liebsten Bosch oder gleichwertig" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-black focus:ring-2 focus:ring-black/10 outline-none"></textarea>
-          </div>
-
-          <div class="grid sm:grid-cols-2 gap-5">
-            <div>
-              <label for="name" class="block text-sm font-bold mb-1.5">Name *</label>
-              <input id="name" name="name" required type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-black focus:ring-2 focus:ring-black/10 outline-none"/>
+          <div class="bg-white rounded-xl p-6 border border-gray-300">
+            <div class="w-11 h-11 rounded-lg bg-black text-white flex items-center justify-center mb-4">
+              <Icon name="chat" size={22}/>
             </div>
-            <div>
-              <label for="kontakt" class="block text-sm font-bold mb-1.5">Telefon / E-Mail *</label>
-              <input id="kontakt" name="kontakt" required type="text" placeholder="0155 ... oder name@..." class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-black focus:ring-2 focus:ring-black/10 outline-none"/>
-            </div>
+            <h3 class="font-black text-lg">Deine Anforderung</h3>
+            <p class="text-gray-700 text-sm mt-2">Original-Teil oder gleichwertige Alternative? Eilig oder zum Lagern? Sag's uns direkt.</p>
           </div>
+        </div>
 
-          <div class="flex items-start gap-2 text-sm">
-            <input id="dsgvo" name="dsgvo" type="checkbox" required class="mt-1"/>
-            <label for="dsgvo" class="text-gray-700">
-              Ich habe die <a href="/datenschutz" class="underline font-bold">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung dieser Anfrage zu.
-            </label>
-          </div>
-
-          <button type="submit" class="btn btn-red btn-lg w-full">Anfrage senden</button>
-
-          <p class="text-xs text-gray-600 text-center">
-            Tipp: Schneller geht's per <a href={wa} target="_blank" rel="noopener" class="underline font-bold">WhatsApp</a> mit Foto.
-          </p>
-        </form>
+        <div class="mt-10 text-center">
+          <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+            <Icon name="whatsapp" size={18}/>
+            Jetzt anfragen
+          </a>
+        </div>
       </div>
     </div>
   </section>

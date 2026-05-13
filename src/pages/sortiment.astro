@@ -1,41 +1,42 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 
 const wa = 'https://wa.me/4915566111551?text=Hallo%2C%20ich%20suche%20folgendes%20Teil%3A%20';
 
 const kategorien = [
   {
-    icon: '🛞',
+    icon: 'filter',
     title: 'Filter & Verschleißteile',
     image: '/images/filter-regal.jpg',
     items: ['Filter (Öl, Luft, Innenraum, Kraftstoff) - alle Marken', 'Bremsen (Scheiben, Beläge, Sättel)', 'Zündkerzen', 'Riemen (Keil, Zahn)', 'Stoßdämpfer', 'Achs-Teile'],
   },
   {
-    icon: '🛢️',
+    icon: 'package',
     title: 'Öle & Schmierstoffe',
     image: '/images/oel-regal.jpg',
     items: ['Liqui Moly (5W-30, 5W-40, 0W-20)', 'Castrol Magnatec & Edge', 'Mannol Extreme & Elite', 'BP Premium', 'Spezial-Öle für Sport- und Oldtimer', 'Ölwechsel-Sets komplett'],
   },
   {
-    icon: '🧪',
+    icon: 'spark',
     title: 'Bremsenreiniger & Pflege',
     image: '/images/bremsenreiniger.jpg',
     items: ['Bremsenreiniger palettenweise', 'Motorreiniger', 'Kontaktspray', 'Rostlöser', 'Werkstatt-Verbrauchsmaterial'],
   },
   {
-    icon: '⚡',
+    icon: 'battery',
     title: 'Elektrik',
     image: 'https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=900',
     items: ['Batterien', 'Lichtmaschinen', 'Anlasser', 'Glühkerzen', 'Sensoren (alle Arten)', 'Kabelbäume', 'Zündspulen'],
   },
   {
-    icon: '🔥',
+    icon: 'car',
     title: 'Motor & Karosserie',
     image: 'https://images.pexels.com/photos/3807329/pexels-photo-3807329.jpeg?auto=compress&cs=tinysrgb&w=900',
     items: ['Motorteile aller Art', 'Kupplungen, Wasserpumpen, Thermostate', 'Stoßfänger, Spiegel, Türgriffe', 'Lampen (LED, Halogen, Xenon)', 'Auspuff-Anlagen, Turbolader'],
   },
   {
-    icon: '📦',
+    icon: 'target',
     title: 'Spezial-Bestellung',
     image: 'https://images.pexels.com/photos/4489734/pexels-photo-4489734.jpeg?auto=compress&cs=tinysrgb&w=900',
     items: ['Premium-Marken (Bosch, Mahle, MANN, Meyle)', 'Original-Teile (OEM)', 'Oldtimer-Teile', 'Importteile', 'Schnelle Beschaffung'],
@@ -49,7 +50,7 @@ const kategorien = [
 >
 
   <section class="bg-black text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-25">
+    <div class="absolute inset-0 opacity-20">
       <img src="/images/filter-regal.jpg"
            alt="" class="w-full h-full object-cover"/>
     </div>
@@ -62,8 +63,14 @@ const kategorien = [
         Von der Bremsscheibe bis zum Turbolader. Wir haben das Meiste auf Lager - und besorgen den Rest blitzschnell.
       </p>
       <div class="mt-7 flex flex-wrap gap-3">
-        <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">📱 Teil per WhatsApp anfragen</a>
-        <a href="tel:+4915566111551" class="btn btn-outline-white btn-lg">📞 Anrufen</a>
+        <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+          <Icon name="whatsapp" size={18}/>
+          Teil per WhatsApp anfragen
+        </a>
+        <a href="tel:+4915566111551" class="btn btn-outline-white btn-lg">
+          <Icon name="phone" size={18}/>
+          Anrufen
+        </a>
       </div>
     </div>
   </section>
@@ -73,18 +80,18 @@ const kategorien = [
       <div class="grid lg:grid-cols-2 gap-8">
         {kategorien.map((k) => (
           <div class="card overflow-hidden p-0">
-            <div class="aspect-[16/9] overflow-hidden bg-gray-100">
+            <div class="aspect-[16/9] overflow-hidden bg-gray-100 relative">
               <img src={k.image} alt={k.title} class="w-full h-full object-cover" loading="lazy"/>
+              <div class="absolute top-4 left-4 w-12 h-12 rounded-lg bg-white/95 backdrop-blur text-red-600 flex items-center justify-center shadow-lg">
+                <Icon name={k.icon} size={26}/>
+              </div>
             </div>
             <div class="p-7">
-              <div class="flex items-center gap-3 mb-2">
-                <div class="text-3xl">{k.icon}</div>
-                <h2 class="text-2xl md:text-3xl font-black">{k.title}</h2>
-              </div>
+              <h2 class="text-2xl md:text-3xl font-black">{k.title}</h2>
               <ul class="mt-4 space-y-2">
                 {k.items.map((item) => (
-                  <li class="flex items-start gap-2 text-gray-800">
-                    <span class="red-accent font-black mt-0.5">→</span>
+                  <li class="flex items-start gap-3 text-gray-800">
+                    <Icon name="check" size={18} class="red-accent flex-shrink-0 mt-1"/>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -97,35 +104,49 @@ const kategorien = [
   </section>
 
   <section class="section gray-section">
-    <div class="container-x text-center">
-      <h2 class="text-3xl md:text-5xl font-black">Nicht dabei? <span class="red-accent">Wir besorgen es.</span></h2>
-      <p class="mt-5 text-gray-700 max-w-xl mx-auto">
-        Über 100.000 Teile sind innerhalb kürzester Zeit beschaffbar. Schick uns einfach Foto oder Teile-Nummer per WhatsApp.
+    <div class="container-x text-center max-w-3xl mx-auto">
+      <span class="eyebrow">Nicht dabei?</span>
+      <h2 class="mt-3 text-3xl md:text-5xl font-black">Was wir nicht haben, <span class="red-accent">besorgen wir.</span></h2>
+      <span class="divider-red mt-5 mx-auto"></span>
+      <p class="mt-6 text-gray-700 text-lg">
+        Über 100.000 Teile innerhalb kürzester Zeit beschaffbar. Schick uns einfach Foto oder Teile-Nummer per WhatsApp - wir kümmern uns drum.
       </p>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">📱 Anfrage starten</a>
-        <a href="/anfrage" class="btn btn-black btn-lg">Anfrage-Formular →</a>
+        <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+          <Icon name="whatsapp" size={18}/>
+          Anfrage starten
+        </a>
+        <a href="tel:+4915566111551" class="btn btn-black btn-lg">
+          <Icon name="phone" size={18}/>
+          Anrufen
+        </a>
       </div>
     </div>
   </section>
 
   <section class="black-section section">
     <div class="container-x">
-      <div class="grid md:grid-cols-3 gap-6 text-center">
+      <div class="grid md:grid-cols-3 gap-8">
         <div>
-          <div class="text-5xl mb-2">💰</div>
+          <div class="w-14 h-14 rounded-lg bg-red-600 text-white flex items-center justify-center mb-5">
+            <Icon name="euro" size={30}/>
+          </div>
           <h3 class="text-xl font-black text-white">Faire Preise</h3>
-          <p class="text-gray-300 mt-2">Deutlich unter Marktdurchschnitt - bestätigt von unseren Kunden.</p>
+          <p class="text-gray-300 mt-3">Deutlich unter Marktdurchschnitt - bestätigt von unseren Kunden.</p>
         </div>
         <div>
-          <div class="text-5xl mb-2">⚡</div>
+          <div class="w-14 h-14 rounded-lg bg-red-600 text-white flex items-center justify-center mb-5">
+            <Icon name="lightning" size={30}/>
+          </div>
           <h3 class="text-xl font-black text-white">Blitz-Lieferung</h3>
-          <p class="text-gray-300 mt-2">Vieles sofort verfügbar. Spezial-Bestellungen oft schon am nächsten Tag.</p>
+          <p class="text-gray-300 mt-3">Vieles sofort verfügbar. Spezial-Bestellungen oft schon am nächsten Tag.</p>
         </div>
         <div>
-          <div class="text-5xl mb-2">🤝</div>
+          <div class="w-14 h-14 rounded-lg bg-red-600 text-white flex items-center justify-center mb-5">
+            <Icon name="handshake" size={30}/>
+          </div>
           <h3 class="text-xl font-black text-white">Ehrliche Beratung</h3>
-          <p class="text-gray-300 mt-2">Wir verkaufen dir nur das, was du wirklich brauchst.</p>
+          <p class="text-gray-300 mt-3">Wir verkaufen dir nur das, was du wirklich brauchst.</p>
         </div>
       </div>
     </div>

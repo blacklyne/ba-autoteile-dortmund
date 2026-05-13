@@ -1,20 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 
 const wa = 'https://wa.me/4915566111551?text=Hallo%2C%20ich%20suche%20folgendes%20Teil%3A%20';
 
 const kategorien = [
-  { icon: '🛒', title: 'Verschleißteile', desc: 'Bremsen, Filter, Riemen, Zündkerzen' },
-  { icon: '🔧', title: 'Ersatzteile', desc: 'Alle Bauteile - vom Motor bis zur Karosserie' },
-  { icon: '⚙️', title: 'Zubehör', desc: 'Werkzeug, Pflegemittel, Tuning' },
-  { icon: '📦', title: 'Spezial-Bestellungen', desc: 'Premium-Marken auf Anfrage' },
+  { icon: 'filter', title: 'Verschleißteile', desc: 'Bremsen, Filter, Riemen, Zündkerzen' },
+  { icon: 'wrench', title: 'Ersatzteile', desc: 'Alle Bauteile - vom Motor bis zur Karosserie' },
+  { icon: 'cog', title: 'Zubehör', desc: 'Werkzeug, Pflegemittel, Tuning' },
+  { icon: 'package', title: 'Spezial-Bestellungen', desc: 'Premium-Marken auf Anfrage' },
 ];
 
 const usps = [
-  { icon: '💰', title: 'Faire Preise', desc: 'Deutlich unter Marktdurchschnitt. Keine versteckten Kosten.' },
-  { icon: '⚡', title: 'Blitz-Lieferung', desc: 'Heute bestellt, morgen verbaut. Vieles sofort verfügbar.' },
-  { icon: '🤝', title: 'Ehrliche Beratung', desc: 'Wir verkaufen dir nur, was du wirklich brauchst.' },
-  { icon: '🚗', title: 'Alle Marken', desc: 'Von Audi bis VW. Auch Exoten und Oldtimer.' },
+  { icon: 'euro', title: 'Faire Preise', desc: 'Deutlich unter Marktdurchschnitt. Keine versteckten Kosten.' },
+  { icon: 'lightning', title: 'Blitz-Lieferung', desc: 'Heute bestellt, morgen verbaut. Vieles sofort verfügbar.' },
+  { icon: 'handshake', title: 'Ehrliche Beratung', desc: 'Wir verkaufen dir nur, was du wirklich brauchst.' },
+  { icon: 'car', title: 'Alle Marken', desc: 'Von Audi bis VW. Auch Exoten und Oldtimer.' },
 ];
 
 const reviews = [
@@ -57,19 +58,25 @@ const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toy
           </h1>
           <p class="mt-6 text-lg md:text-xl text-gray-700 max-w-xl">
             Alle Marken. Faire Preise. Heute bestellt - morgen verbaut.
-            <span class="font-bold text-black">5.0★ aus 22 Bewertungen.</span>
+            <span class="font-bold text-black">5.0 Sterne aus 22 Bewertungen.</span>
           </p>
 
           <div class="mt-8 flex flex-wrap gap-3">
             <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.711.307 1.265.489 1.697.626.713.227 1.362.195 1.875.118.572-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+              <Icon name="whatsapp" size={18}/>
               WhatsApp anfragen
             </a>
-            <a href="tel:+4915566111551" class="btn btn-red btn-lg">📞 0155 66 111551</a>
-            <a href="/anfrage" class="btn btn-outline btn-lg">Teil suchen lassen →</a>
+            <a href="tel:+4915566111551" class="btn btn-red btn-lg">
+              <Icon name="phone" size={18}/>
+              0155 66 111551
+            </a>
+            <a href="/anfrage" class="btn btn-outline btn-lg">Teil suchen lassen</a>
           </div>
 
-          <p class="mt-5 text-sm text-gray-600 font-bold">📸 Foto schicken - Preis bekommen. So einfach.</p>
+          <p class="mt-5 text-sm text-gray-600 font-bold flex items-center gap-2">
+            <Icon name="camera" size={18} class="red-accent"/>
+            Foto schicken - Preis bekommen. So einfach.
+          </p>
 
           <div class="mt-8 flex flex-wrap gap-4 items-center">
             <div class="badge-rating">
@@ -88,7 +95,7 @@ const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toy
           </div>
           <div class="absolute -bottom-6 -left-6 bg-black text-white px-6 py-4 rounded-xl shadow-xl max-w-xs">
             <div class="text-xs uppercase tracking-wider text-red-500 font-bold">Inhaber-geführt</div>
-            <div class="text-xl font-black mt-1">5.0★ aus 22 Bewertungen</div>
+            <div class="text-xl font-black mt-1">5.0 / 22 Bewertungen</div>
           </div>
           <div class="hidden md:block absolute -top-4 -right-4 bg-red-600 text-white px-5 py-3 rounded-xl shadow-xl">
             <div class="text-xs uppercase tracking-wider opacity-80 font-bold">Schnell</div>
@@ -100,22 +107,22 @@ const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toy
   </section>
 
   <section class="bg-black text-white">
-    <div class="container-x py-6 grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div class="container-x py-8 grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
       <div>
-        <div class="text-3xl font-black red-accent">5.0★</div>
-        <div class="text-xs uppercase tracking-wider text-gray-400">22 Bewertungen</div>
+        <div class="text-3xl md:text-4xl font-black red-accent">5.0</div>
+        <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">aus 22 Bewertungen</div>
       </div>
       <div>
-        <div class="text-3xl font-black">&lt; 30min</div>
-        <div class="text-xs uppercase tracking-wider text-gray-400">WhatsApp-Antwort</div>
+        <div class="text-3xl md:text-4xl font-black">&lt; 30 min</div>
+        <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">WhatsApp-Antwort</div>
       </div>
       <div>
-        <div class="text-3xl font-black red-accent">Heute</div>
-        <div class="text-xs uppercase tracking-wider text-gray-400">bestellt - morgen verbaut</div>
+        <div class="text-3xl md:text-4xl font-black red-accent">Heute</div>
+        <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">bestellt, morgen verbaut</div>
       </div>
       <div>
-        <div class="text-3xl font-black">100+</div>
-        <div class="text-xs uppercase tracking-wider text-gray-400">Marken im Sortiment</div>
+        <div class="text-3xl md:text-4xl font-black">100+</div>
+        <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">Marken im Sortiment</div>
       </div>
     </div>
   </section>
@@ -131,10 +138,14 @@ const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toy
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {kategorien.map((k) => (
           <a href="/sortiment" class="card group">
-            <div class="text-4xl mb-3">{k.icon}</div>
+            <div class="w-12 h-12 rounded-lg bg-red-50 text-red-600 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:text-white transition">
+              <Icon name={k.icon} size={26}/>
+            </div>
             <h3 class="text-lg font-black">{k.title}</h3>
             <p class="text-gray-700 text-sm mt-2">{k.desc}</p>
-            <div class="mt-4 text-sm font-bold red-accent group-hover:translate-x-1 transition">Mehr →</div>
+            <div class="mt-4 text-sm font-bold red-accent flex items-center gap-1 group-hover:gap-2 transition-all">
+              Mehr <Icon name="arrow" size={14}/>
+            </div>
           </a>
         ))}
       </div>
@@ -142,7 +153,7 @@ const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toy
   </section>
 
   <section class="black-section section relative overflow-hidden">
-    <div class="absolute inset-0 opacity-25 pointer-events-none">
+    <div class="absolute inset-0 opacity-15 pointer-events-none">
       <img src="/images/filter-regal.jpg"
            alt="" class="w-full h-full object-cover"/>
     </div>
@@ -155,8 +166,10 @@ const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toy
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {usps.map((u) => (
-          <div class="bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10 hover:border-red-500 transition">
-            <div class="text-4xl mb-3">{u.icon}</div>
+          <div class="bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10 hover:border-red-500 hover:bg-white/10 transition">
+            <div class="w-12 h-12 rounded-lg bg-red-600 text-white flex items-center justify-center mb-4">
+              <Icon name={u.icon} size={26}/>
+            </div>
             <h3 class="text-lg font-black text-white">{u.title}</h3>
             <p class="text-gray-300 text-sm mt-2">{u.desc}</p>
           </div>
@@ -174,25 +187,43 @@ const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toy
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-xl p-7 border border-gray-300">
-          <div class="text-6xl font-black red-accent leading-none">01</div>
-          <h3 class="text-xl font-black mt-3">Foto / Nummer schicken</h3>
-          <p class="text-gray-700 mt-2">Du schickst uns das Teil per WhatsApp - Foto oder Teile-Nummer reicht.</p>
+        <div class="bg-white rounded-xl p-8 border border-gray-300 relative">
+          <div class="absolute top-6 right-6 text-7xl font-black text-gray-100 leading-none">01</div>
+          <div class="relative">
+            <div class="w-12 h-12 rounded-lg bg-red-600 text-white flex items-center justify-center mb-4">
+              <Icon name="camera" size={26}/>
+            </div>
+            <h3 class="text-xl font-black">Foto oder Nummer schicken</h3>
+            <p class="text-gray-700 mt-3">Du schickst uns das Teil per WhatsApp - Foto oder Teile-Nummer reicht.</p>
+          </div>
         </div>
-        <div class="bg-white rounded-xl p-7 border border-gray-300">
-          <div class="text-6xl font-black red-accent leading-none">02</div>
-          <h3 class="text-xl font-black mt-3">Wir prüfen Preis &amp; Lager</h3>
-          <p class="text-gray-700 mt-2">Wir checken Verfügbarkeit, geben dir Preis und Liefer-Zeit zurück - meist unter 30 Min.</p>
+        <div class="bg-white rounded-xl p-8 border border-gray-300 relative">
+          <div class="absolute top-6 right-6 text-7xl font-black text-gray-100 leading-none">02</div>
+          <div class="relative">
+            <div class="w-12 h-12 rounded-lg bg-red-600 text-white flex items-center justify-center mb-4">
+              <Icon name="search" size={26}/>
+            </div>
+            <h3 class="text-xl font-black">Wir prüfen Preis &amp; Lager</h3>
+            <p class="text-gray-700 mt-3">Wir checken Verfügbarkeit, geben dir Preis und Liefer-Zeit zurück - meist unter 30 Min.</p>
+          </div>
         </div>
-        <div class="bg-white rounded-xl p-7 border border-gray-300">
-          <div class="text-6xl font-black red-accent leading-none">03</div>
-          <h3 class="text-xl font-black mt-3">Abholen oder Versand</h3>
-          <p class="text-gray-700 mt-2">Heute bestellt - oft morgen verbaut. Selbstabholung in Dortmund-Mitte oder Versand.</p>
+        <div class="bg-white rounded-xl p-8 border border-gray-300 relative">
+          <div class="absolute top-6 right-6 text-7xl font-black text-gray-100 leading-none">03</div>
+          <div class="relative">
+            <div class="w-12 h-12 rounded-lg bg-red-600 text-white flex items-center justify-center mb-4">
+              <Icon name="truck" size={26}/>
+            </div>
+            <h3 class="text-xl font-black">Abholen oder Versand</h3>
+            <p class="text-gray-700 mt-3">Heute bestellt - oft morgen verbaut. Selbstabholung in Dortmund-Mitte oder Versand.</p>
+          </div>
         </div>
       </div>
 
       <div class="mt-10 text-center">
-        <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">📱 Jetzt WhatsApp-Anfrage starten</a>
+        <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+          <Icon name="whatsapp" size={18}/>
+          Jetzt WhatsApp-Anfrage starten
+        </a>
       </div>
     </div>
   </section>
@@ -201,7 +232,7 @@ const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toy
     <div class="container-x">
       <div class="max-w-2xl mb-12">
         <span class="eyebrow">Echte Stimmen</span>
-        <h2 class="mt-3 text-3xl md:text-5xl font-black">5.0★ aus 22 Bewertungen.</h2>
+        <h2 class="mt-3 text-3xl md:text-5xl font-black">5.0 Sterne aus 22 Bewertungen.</h2>
         <span class="divider-red mt-5"></span>
         <p class="mt-4 text-gray-700">Was unsere Kunden auf Google sagen.</p>
       </div>
@@ -209,7 +240,7 @@ const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toy
       <div class="grid md:grid-cols-3 gap-5">
         {reviews.map((r) => (
           <div class="card">
-            <div class="text-red-600 text-lg font-bold mb-3">★★★★★</div>
+            <div class="text-red-600 text-lg font-bold mb-3 tracking-wider">★★★★★</div>
             <p class="text-gray-800 leading-relaxed">"{r.text}"</p>
             <div class="mt-5 pt-4 border-t border-gray-200 text-sm font-bold">- {r.author}</div>
           </div>
@@ -245,14 +276,15 @@ const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toy
                class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy"/>
         </div>
         <div class="aspect-square rounded-xl overflow-hidden bg-black text-white flex flex-col items-center justify-center p-4 text-center">
-          <div class="text-3xl font-black red-accent">5.0★</div>
-          <div class="text-xs uppercase tracking-widest mt-2">22 Google<br/>Bewertungen</div>
+          <div class="text-3xl font-black red-accent">5.0</div>
+          <div class="text-red-500 text-sm tracking-wider mt-1">★★★★★</div>
+          <div class="text-xs uppercase tracking-widest mt-2 text-gray-300">22 Google<br/>Bewertungen</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-12 bg-gray-100 border-y border-gray-300">
+  <section class="py-14 bg-gray-100 border-y border-gray-300">
     <div class="container-x">
       <div class="text-center mb-6">
         <span class="eyebrow">Alle Marken</span>
@@ -279,7 +311,10 @@ const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toy
           </p>
         </div>
         <div class="relative flex md:justify-end">
-          <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">📱 Jetzt anfragen</a>
+          <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+            <Icon name="whatsapp" size={18}/>
+            Jetzt anfragen
+          </a>
         </div>
       </div>
     </div>
@@ -293,22 +328,36 @@ const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toy
           <h2 class="mt-3 text-3xl md:text-5xl font-black">In Dortmund-Mitte.<br/>Auch Samstag offen.</h2>
           <span class="divider-red mt-5"></span>
 
-          <div class="mt-8 space-y-5">
-            <div>
-              <div class="text-xs uppercase tracking-widest font-bold text-gray-600">Adresse</div>
-              <div class="text-lg font-bold mt-1">Bleichmärsch 24<br/>44145 Dortmund-Mitte</div>
+          <div class="mt-8 space-y-6">
+            <div class="flex gap-4">
+              <div class="w-11 h-11 rounded-lg bg-black text-white flex items-center justify-center flex-shrink-0">
+                <Icon name="pin" size={22}/>
+              </div>
+              <div>
+                <div class="text-xs uppercase tracking-widest font-bold text-gray-600">Adresse</div>
+                <div class="text-lg font-bold mt-1">Bleichmärsch 24<br/>44145 Dortmund-Mitte</div>
+              </div>
             </div>
-            <div>
-              <div class="text-xs uppercase tracking-widest font-bold text-gray-600">Öffnungszeiten</div>
-              <div class="text-lg font-bold mt-1">
-                Mo - Fr: 09:00 - 17:30<br/>
-                Sa: <span class="red-accent">09:00 - 14:00</span><br/>
-                So: geschlossen
+            <div class="flex gap-4">
+              <div class="w-11 h-11 rounded-lg bg-black text-white flex items-center justify-center flex-shrink-0">
+                <Icon name="clock" size={22}/>
+              </div>
+              <div>
+                <div class="text-xs uppercase tracking-widest font-bold text-gray-600">Öffnungszeiten</div>
+                <div class="text-lg font-bold mt-1">
+                  Mo - Fr: 09:00 - 17:30<br/>
+                  Sa: <span class="red-accent">09:00 - 14:00</span><br/>
+                  So: geschlossen
+                </div>
               </div>
             </div>
             <div class="flex flex-wrap gap-3 pt-2">
-              <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp</a>
-              <a href="tel:+4915566111551" class="btn btn-red">📞 Anrufen</a>
+              <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp">
+                <Icon name="whatsapp" size={16}/> WhatsApp
+              </a>
+              <a href="tel:+4915566111551" class="btn btn-red">
+                <Icon name="phone" size={16}/> Anrufen
+              </a>
               <a href="/kontakt" class="btn btn-outline">Alle Kontakte</a>
             </div>
           </div>
@@ -329,8 +378,12 @@ const marken = ['Audi', 'BMW', 'Mercedes', 'VW', 'Opel', 'Porsche', 'Ford', 'Toy
       <h2 class="text-3xl md:text-5xl font-black text-white">Teil gesucht?<br/><span class="red-accent">Foto schicken - Preis bekommen.</span></h2>
       <p class="mt-5 text-gray-300 max-w-xl mx-auto">Die schnellste Art, an dein Teil zu kommen. Antwort meist unter 30 Min während Öffnungszeiten.</p>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">📱 WhatsApp starten</a>
-        <a href="tel:+4915566111551" class="btn btn-red btn-lg">📞 0155 66 111551</a>
+        <a href={wa} target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+          <Icon name="whatsapp" size={18}/> WhatsApp starten
+        </a>
+        <a href="tel:+4915566111551" class="btn btn-red btn-lg">
+          <Icon name="phone" size={18}/> 0155 66 111551
+        </a>
       </div>
     </div>
   </section>
